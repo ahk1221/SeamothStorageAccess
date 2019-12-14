@@ -33,7 +33,7 @@ namespace SeamothStorageAccess.Patches
         static void Prefix(SeaMoth __instance)
         {
             var updateContainer = __instance.upgradesInput;
-            if (Input.GetKeyDown(Main.UpgradeKey))
+            if (Input.GetKeyDown(Main.UpgradeKey) && !Player.main.GetPDA().isOpen && Player.main.GetVehicle() == __instance)
                 updateContainer.OpenFromExternal();
         }
     }
