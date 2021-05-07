@@ -22,7 +22,7 @@ namespace SeamothStorageAccess
             var slotTypes = typeof(CraftData).GetField("slotTypes", BindingFlags.NonPublic | BindingFlags.Static)
                             .GetValue(null) as Dictionary<TechType, QuickSlotType>;
 
-            slotTypes[TechType.VehicleStorageModule] = QuickSlotType.Instant;
+            slotTypes[TechType.VehicleStorageModule] = QuickSlotType.Selectable;
 
             Console.WriteLine("[SeamothStorageAccess] Successfully patched.");
         }
